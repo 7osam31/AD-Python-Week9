@@ -1,0 +1,29 @@
+"""
+Day 42 Activity: Distributions
+Tasks:
+1) Generate uniform and normal samples
+2) Plot histograms and KDEs
+3) Compare mean and std
+"""
+
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# TODO: Generate samples
+continuous = np.random.normal(loc=0, scale=1, size=1000) 
+uniform = np.random.uniform(-1, 1, size=5000)
+    
+# TODO: Plot distributions
+sns.histplot(continuous,kde=True,fill=True)
+plt.show()
+sns.histplot(uniform,kde=True,fill=True)
+plt.show()
+
+#TODO: Compute and print mean and std
+continuous_mean = np.mean(continuous)
+continuous_std = np.std(continuous)
+uniform_mean = np.mean(uniform)
+uniform_std = np.std(uniform)
+print("Continuous mean:", continuous_mean, "std:", continuous_std)
+print("Uniform mean:", uniform_mean, "std:", uniform_std)
