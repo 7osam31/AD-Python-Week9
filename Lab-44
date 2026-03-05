@@ -1,0 +1,18 @@
+"""
+Day 44 Activity: Log, Exp, Softmax
+Tasks:
+1) Implement stable softmax
+2) Apply to score vector
+3) Show sum of probabilities
+"""
+
+import numpy as np
+
+# TODO: Implement softmax_stable
+def softmax_naive(scores):
+    exp_scores = np.exp(scores)
+    return exp_scores / np.sum(exp_scores)
+
+# TODO: Apply to scores
+scores = np.array([3.0, 1.0, 0.2])
+print("Naive Softmax Probabilities:",softmax_naive(scores), "\nSUM:", softmax_naive(scores).sum())
